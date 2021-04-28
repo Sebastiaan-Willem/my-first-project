@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 
 import { FormsModule } from '@angular/forms';
+import { MijnpipePipe } from './mijnpipe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesComponent
+    HeroesComponent,
+    MijnpipePipe
   ],
   imports: [
     BrowserModule,
