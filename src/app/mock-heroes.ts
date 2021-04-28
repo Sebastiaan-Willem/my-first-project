@@ -1,4 +1,4 @@
-import { Hero } from './Hero';
+import { Hero } from './hero';
 
 export const HEROES:Hero[] = [
     {id: 11, name: 'Dr. Nice', imagePath: "http://placekitten.com/400/600"},
