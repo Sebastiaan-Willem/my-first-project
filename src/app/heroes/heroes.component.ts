@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { MessagesService } from '../messages.service';
 
 @Component({
   selector: 'app-heroes',
@@ -14,7 +15,9 @@ export class HeroesComponent implements OnInit {
   isImageVisible = true;
   clicked = 0;
 
-  constructor(private heroService: HeroService) {
+  constructor(
+    private heroService: HeroService, 
+    private messageService: MessagesService) {
   }
 
 
@@ -24,6 +27,7 @@ export class HeroesComponent implements OnInit {
 
   OnSelect(hero: Hero) {
     this.selectedHero = hero;
+    this.messageService.addMessage(`HeroService: Clicked on:${hero.id} ${hero.name}`);
   }
 
   // Get data async from database server

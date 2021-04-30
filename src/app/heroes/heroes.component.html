@@ -13,10 +13,3 @@
     <!-- Event Binding -->
     <button (click)="HandleClicked()">Click me</button>
 </div>
-
-<div *ngIf="selectedHero">
-    <div *ngIf="isImageVisible">
-        <!-- Property Binding -->
-        <img [src]="selectedHero.imagePath" />
-    </div>
-</div>
