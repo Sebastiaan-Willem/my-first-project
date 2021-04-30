@@ -2,10 +2,9 @@
 
 
 <h2>My Heroes</h2>
+
 <ul class="heroes">
-    <li *ngFor="let hero of heroes" 
-    [class.selected]="hero === selectedHero" 
-    (click)="OnSelect(hero)">
+    <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="OnSelect(hero)">
         <span class="badge">{{ hero.id | mijnpipe}} </span> {{ hero.name | titlecase}}
     </li>
 </ul>
@@ -15,7 +14,9 @@
     <button (click)="HandleClicked()">Click me</button>
 </div>
 
-<div *ngIf="isImageVisible">
-    <!-- Property Binding -->
-    <img [src]="selectedHero.imagePath" />
+<div *ngIf="selectedHero">
+    <div *ngIf="isImageVisible">
+        <!-- Property Binding -->
+        <img [src]="selectedHero.imagePath" />
+    </div>
 </div>
