@@ -12,7 +12,6 @@ export class HeroesComponent implements OnInit {
   selectedHero?: Hero;
 
   isImageVisible = true;
-
   clicked = 0;
 
   constructor(private heroService: HeroService) {
@@ -27,8 +26,11 @@ export class HeroesComponent implements OnInit {
     this.selectedHero = hero;
   }
 
+  // Get data async from database server
+  // Subscribe -> Wait until method has been completed, then perform action
   getHeroes(): void {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes()
+      .subscribe(x => this.heroes = x);
   }
 
   HandleClicked() {
