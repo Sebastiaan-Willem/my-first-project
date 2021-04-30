@@ -17,7 +17,7 @@ export class HeroesComponent implements OnInit {
   constructor(private heroService: HeroService) {
   }
 
-  
+
   ngOnInit(): void {
     this.getHeroes();
   }
@@ -36,14 +36,11 @@ export class HeroesComponent implements OnInit {
   HandleClicked() {
     if (this.selectedHero) {
       if (this.clicked % 2 === 0) {
-        this.selectedHero.imagePath = "http://placekitten.com/400/600"
-        this.isImageVisible = true;
+        this.selectedHero.imagePath = "http://placekitten.com/600/400"
       }
       else {
-        this.selectedHero.imagePath = "http://placekitten.com/600/400"
-        this.isImageVisible = false;
+        this.selectedHero.imagePath = "http://placekitten.com/400/600"
       }
-
       this.clicked++;
     }
   }
