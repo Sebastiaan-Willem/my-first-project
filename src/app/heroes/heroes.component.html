@@ -1,15 +1,18 @@
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
 
 
 <h2>My Heroes</h2>
 
 <ul class="heroes">
-    <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="OnSelect(hero)">
-        <span class="badge">{{ hero.id | mijnpipe}} </span> {{ hero.name | titlecase}}
+    <li *ngFor="let hero of heroes" 
+    [class.selected]="hero === selectedHero">
+        <a routerLink="/detail/{{hero.id}}">
+            <span class="badge">{{ hero.id | mijnpipe}} </span> {{ hero.name | titlecase}}
+        </a>
     </li>
 </ul>
 
-<div>
-    <!-- Event Binding -->
+<!-- <div>
+    Event Binding 
     <button (click)="HandleClicked()">Click me</button>
-</div>
+</div> -->

@@ -1,0 +1,9 @@
+<h2>My Powers</h2>
+
+<ul class="heroes">
+    <li *ngFor="let power of superpowers">
+        <a routerLink="/powerdetail/{{power.id}}">
+            <span class="badge">{{ power.id}} </span> {{ power.name | titlecase}}
+        </a>
+    </li>
+</ul>

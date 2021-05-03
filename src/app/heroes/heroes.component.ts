@@ -25,10 +25,10 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
-  OnSelect(hero: Hero) {
-    this.selectedHero = hero;
-    this.messageService.addMessage(`HeroService: Clicked on:${hero.id} ${hero.name}`);
-  }
+  // OnSelect(hero: Hero) {
+  //   this.selectedHero = hero;
+  //   this.messageService.addMessage(`HeroService: Clicked on:${hero.id} ${hero.name}`);
+  // }
 
   // Get data async from database server
   // Subscribe -> Wait until method has been completed, then perform action
@@ -37,15 +37,15 @@ export class HeroesComponent implements OnInit {
       .subscribe(x => this.heroes = x);
   }
 
-  HandleClicked() {
-    if (this.selectedHero) {
-      if (this.clicked % 2 === 0) {
-        this.selectedHero.imagePath = "http://placekitten.com/600/400"
-      }
-      else {
-        this.selectedHero.imagePath = "http://placekitten.com/400/600"
-      }
-      this.clicked++;
-    }
-  }
+  // HandleClicked() {
+  //   if (this.selectedHero) {
+  //     if (this.clicked % 2 === 0) {
+  //       this.selectedHero.imagePath = "http://placekitten.com/600/400"
+  //     }
+  //     else {
+  //       this.selectedHero.imagePath = "http://placekitten.com/400/600"
+  //     }
+  //     this.clicked++;
+  //   }
+  // }
 }

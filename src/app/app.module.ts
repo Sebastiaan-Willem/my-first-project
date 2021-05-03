@@ -10,6 +10,14 @@ import { MijnpipePipe } from './mijnpipe.pipe';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PowerDetailComponent } from './power-detail/power-detail.component';
+import { PowersComponent } from './powers/powers.component';
+
+//Provides communication between Angular and API
+import {HttpClientModule} from '@angular/common/http';
+//import only for MOCK API
+import { HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import { InMemoryDataService} from './in-memory-data.service'; 
 
 @NgModule({
   declarations: [
@@ -18,12 +26,18 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MijnpipePipe,
     HeroDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    PowerDetailComponent,
+    PowersComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, {dataEncapsulation : false}
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

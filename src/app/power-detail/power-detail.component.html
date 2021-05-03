@@ -1,0 +1,15 @@
+<button (click)="onBackButtonClicked()">Back</button>
+
+<div *ngIf="superpower">
+    <h2>{{ superpower.name }} </h2> Details:
+    <div>
+        <span>Superpower Id: </span> {{ superpower.id  }}
+    </div>
+    <div>
+        <label for="superpower-name">Superpower name: </label>
+        <input id="superpower-name" [(ngModel)]="superpower.name" placeholder="name">
+    </div>
+    <div>
+        <span>Superpower type: </span> {{superpower.type}}
+    </div>
+</div>
