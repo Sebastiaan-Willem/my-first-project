@@ -39,4 +39,8 @@ export class HeroDetailComponent implements OnInit {
   onBackButtonClicked() : void{
     this.location.back();
   }
+
+  SaveHero(): void{
+    this.heroService.updateHero(this.hero).subscribe(() => this.onBackButtonClicked());
+  }
 }

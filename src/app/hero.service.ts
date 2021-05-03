@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Hero } from './hero';
@@ -20,6 +20,9 @@ export class HeroService {
      */
     
     private heroesUrl = 'api/heroes';
+    httpOptions = {
+      headers: new HttpHeaders({'Content-type':'application/json'})
+    };
 
     getHeroes(): Observable<Hero[]>{
       //API -> Http request, get array of heroes from specified URL
@@ -38,7 +41,11 @@ export class HeroService {
 
       return hero;
     }
-
+    
+    updateHero(hero?: Hero): Observable<any>{
+        //pass location, the data to update and options
+        return this.http.put(this.heroesUrl, hero, this.httpOptions);
+    }
     /**
      * 
      * From Local File
