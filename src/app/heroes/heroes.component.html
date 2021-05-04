@@ -3,12 +3,22 @@
 
 <h2>My Heroes</h2>
 
+<div>
+    <!-- for -> name to allow access to this label from backend -->
+    <label for="new-hero">Hero Name:</label>
+    <input for="new-hero" type="text" #heroName />
+    <button class="add-button"
+    (click)="add(heroName.value); heroName.value=''">Add Hero </button>
+    <!-- makes the field empty after executing the add() method -->
+</div>
+
 <ul class="heroes">
     <li *ngFor="let hero of heroes" 
     [class.selected]="hero === selectedHero">
         <a routerLink="/detail/{{hero.id}}">
             <span class="badge">{{ hero.id | mijnpipe}} </span> {{ hero.name | titlecase}}
         </a>
+        <button class="delete" title="delete hero" (click)="deleteHero(hero)">X</button>
     </li>
 </ul>
 

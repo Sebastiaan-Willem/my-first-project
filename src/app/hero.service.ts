@@ -9,6 +9,7 @@ import { MessagesService } from './messages.service';
   providedIn: 'root'
 })
 export class HeroService {
+  
 
   constructor(
     private messagesService: MessagesService,
@@ -41,11 +42,23 @@ export class HeroService {
 
       return hero;
     }
+
+    addHero(hero: Hero): Observable<Hero> {
+
+      return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions);      
+    }
     
     updateHero(hero?: Hero): Observable<any>{
         //pass location, the data to update and options
         return this.http.put(this.heroesUrl, hero, this.httpOptions);
     }
+
+    deleteHero(hero: Hero): Observable<Hero>{
+      const url = `${this.heroesUrl}/${hero.id}`;
+        return this.http.delete<Hero>(url, this.httpOptions);
+    }
+
+    
     /**
      * 
      * From Local File

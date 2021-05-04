@@ -37,6 +37,23 @@ export class HeroesComponent implements OnInit {
       .subscribe(x => this.heroes = x);
   }
 
+  add(name: string){
+    name = name.trim();
+    if(!name){return;}
+    
+    this.heroService.addHero({name} as Hero)
+                    .subscribe(x => this.heroes.push(x));
+
+  }
+
+  deleteHero(hero: Hero)
+  {
+    if(!hero){return;}
+    this.heroService.deleteHero(hero)
+                    .subscribe(() => this.heroes = this.heroes.filter(x => x != hero));
+                    //get everythingthing that's NOT equal to the to be deleted element
+  }
+
   // HandleClicked() {
   //   if (this.selectedHero) {
   //     if (this.clicked % 2 === 0) {
