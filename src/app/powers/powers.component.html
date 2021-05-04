@@ -1,9 +1,29 @@
 <h2>My Powers</h2>
 
+<div>
+    <!-- for -> name to allow access to this label from backend -->
+    <div>
+        <label for="new-power">Power Name:</label>
+        <input for="new-power" type="text" [(ngModel)]="newSuperPower.name"/>
+    </div>
+    <div>
+        <label for="new-power">Power Type:</label>
+        <input for="new-power" type="text" [(ngModel)]="newSuperPower.type" />
+    </div>
+    <div>
+        <label for="new-power">Is Overpowered?:</label>
+        <input for="new-power" type="checkbox" [(ngModel)]="newSuperPower.isOverpowered" />
+    </div>
+    <button class="add-button"
+    (click)="addPower(this.newSuperPower);">Add Power </button>
+    
+</div>
+
 <ul class="heroes">
     <li *ngFor="let power of superpowers">
         <a routerLink="/powerdetail/{{power.id}}">
             <span class="badge">{{ power.id}} </span> {{ power.name | titlecase}}
         </a>
+        <button class="delete" title="delete hero" (click)="deletePower(power)">X</button>
     </li>
 </ul>

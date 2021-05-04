@@ -31,6 +31,11 @@ export class PowerDetailComponent implements OnInit {
                     //subscribe only works on ASYNC methods (return type Observable)
   }
 
+  SaveSuperPower(): void {
+    this.powerService.updateSuperPower(this.superpower)
+                    .subscribe(() => this.onBackButtonClicked());
+  }
+
   onBackButtonClicked(){
     this.location.back();
   }

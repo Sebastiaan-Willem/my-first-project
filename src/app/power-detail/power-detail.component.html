@@ -10,6 +10,8 @@
         <input id="superpower-name" [(ngModel)]="superpower.name" placeholder="name">
     </div>
     <div>
-        <span>Superpower type: </span> {{superpower.type}}
+        <span>Superpower type: </span>
+        <input id="superpower-type" [(ngModel)]="superpower.type" placeholder="type">
     </div>
+    <button (click)="SaveSuperPower()">Save SuperPower</button>
 </div>
