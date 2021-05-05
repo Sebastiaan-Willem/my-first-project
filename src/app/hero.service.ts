@@ -58,6 +58,26 @@ export class HeroService {
         return this.http.delete<Hero>(url, this.httpOptions);
     }
 
+    // searchHeroes(query: string): Observable<Hero[]>{
+    //   if(!query.trim()) {return of([]);}
+    //   //null/empty check -> return empty array
+
+    //   let users = this.http.get<Hero[]>(`${this.heroesUrl}/?name=${query}`);
+    //                         //get heroes whose name is part of the query
+
+    //   users?this.messagesService.addMessage(`HeroService: Users found.`):this.messagesService.addMessage(`HeroService: No users found.`);
+    //   //shorthand for if/else below
+
+    //   // if(users){
+    //   //   this.messagesService.addMessage(`HeroService: Users found.`)
+    //   // }
+    //   // else{
+    //   //   this.messagesService.addMessage(`HeroService: No users found.`)
+    //   // }
+
+    //   return users;
+    // }
+
     
     /**
      * 
