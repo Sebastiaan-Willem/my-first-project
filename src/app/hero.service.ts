@@ -17,10 +17,17 @@ export class HeroService {
 
     /**
      * 
-     * From (mock) API
+     * From (mock) API (locally made here in Angular)
      */
     
-    private heroesUrl = 'api/heroes';
+    //private heroesUrl = 'api/heroes';
+    
+    /**
+     * 
+     * From API
+     */
+    private heroesUrl = 'https://localhost:44384/heroes';
+    
     httpOptions = {
       headers: new HttpHeaders({'Content-type':'application/json'})
     };

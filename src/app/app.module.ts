@@ -17,7 +17,6 @@ import { PowersComponent } from './powers/powers.component';
 import {HttpClientModule} from '@angular/common/http';
 //import only for MOCK API
 import { HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
-import { InMemoryDataService} from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component'; 
 
 @NgModule({
@@ -37,9 +36,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, {dataEncapsulation : false}
-    )
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

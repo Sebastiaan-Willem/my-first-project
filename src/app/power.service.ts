@@ -18,10 +18,19 @@ export class PowerService {
 
     /**
      * 
-     * From (mock) API
+     * From (mock) API (locally made here in Angular)
      */
 
-    private superpowersUrl = 'api/superpowers';
+    //private superpowersUrl = 'api/superpowers';
+
+
+    /**
+     * 
+     * From API
+     */
+    private superpowersUrl = 'https://localhost:44384/superpowers';
+
+
     httpOptions = {
       headers: new HttpHeaders({'Content-type':'application/json'})
     };
